@@ -1,0 +1,535 @@
+@charset "UTF-8";
+
+/*Обнуление*/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*--------------------*/
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clipboard:before {
+  content: "\e9b8";
+  font-size: 20px;
+  color: gray;
+}
+
+.icon-star-empty:before {
+  content: "\e9d7";
+  font-size: 20px;
+  color: gold;
+}
+
+.icon-heart:before {
+  content: "\e9da";
+  font-size: 20px;
+  color: rgba(128, 128, 128, 0.556);
+}
+
+.icon-heart .icon-mail2:before {
+  content: "\ea84";
+  font-size: 20px;
+  color: rebeccapurple;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.aside {
+  font-size: 40px;
+  width: 300px;
+  flex-shrink: 0;
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+}
+
+.aside p {
+  margin: 0 auto;
+}
+
+.contant-block {
+  width: calc(100% - 300px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.content {
+  position: relative;
+  border: 0.5px solid rgba(128, 128, 128, 0.16);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 20px;
+}
+
+.content__img {
+  min-height: 300px;
+  max-height: 400px;
+}
+
+.content__img a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.content__img a img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.content__title-action-discount {
+  display: inline-block;
+  padding: 3px;
+  background-color: red;
+  color: white;
+}
+
+.content__title-action-hit {
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+  color: white;
+  background-color: red;
+  text-transform: uppercase;
+}
+
+.content__title-action-hit.content__title-action-hit-bastprice {
+  background-color: green;
+}
+
+.content__title-aboute {
+  margin-top: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: blue;
+}
+
+.content__title-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 10px 0;
+}
+
+.content__title-reviews-elem {
+  display: flex;
+}
+
+.content__title-reviews-link {
+  color: blue;
+}
+
+.content__price-value {
+  margin: 5px 0;
+  color: red;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.content__price-value::before {
+  content: "цена";
+  color: gray;
+  position: absolute;
+  left: 0;
+  top: -10px;
+}
+
+.content__price-old {
+  color: gray;
+  display: inline-block;
+  position: relative;
+}
+
+.content__price-old::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.content__price-cashback {
+  color: black;
+  margin-left: 10px;
+  padding: 2px;
+  background-color: #f0e399;
+}
+
+.content__buy {
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  width: 100%;
+  display: flex;
+  visibility: hidden;
+  position: absolute;
+  transform: translate(0, 100%);
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+}
+
+.content__buy-btn {
+  display: inline-block;
+}
+
+.content__buy-btn span {
+  color: white;
+  background-color: green;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+
+.content__buy-favorites {
+  margin-left: auto;
+}
+
+.content__buy-compar {
+  margin-left: 10px;
+}
+
+.dspl-block-buy {
+  visibility: visible;
+  -webkit-box-shadow: 0px 28px 10px 8px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 28px 10px 8px rgba(0, 0, 0, 0.48);
+}
+
+.hover-shadow-content {
+  -webkit-box-shadow: 0px 28px 10px 8px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 28px 10px 8px rgba(0, 0, 0, 0.48);
+}
+
+.rating-area {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.rating-area:not(:checked) > input {
+  display: none;
+}
+
+.rating-area:not(:checked) > label {
+  height: 16px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.5em;
+  color: rgba(255, 217, 0, 0.32);
+}
+
+.rating-area:not(:checked) > label:before {
+  content: "★";
+}
+
+.rating-area > input:checked ~ label {
+  color: gold;
+}
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+  color: gold;
+}
+
+.rate-area > label:active {
+  position: relative;
+}
+
+@media screen and (min-width: 1600px) {
+  .content__title-action-discount {
+    font-size: 14px;
+  }
+
+  .content__title-action-hit {
+    font-size: 14px;
+  }
+
+  .content__title-aboute {
+    font-size: 14px;
+  }
+
+  .content__title-text {
+    font-size: 20px;
+  }
+
+  .content__title-reviews-link {
+    font-size: 14px;
+  }
+
+  .content__price-value {
+    font-size: 24px;
+  }
+
+  .content__price-value::before {
+    font-size: 12px;
+  }
+
+  .content__price-old {
+    font-size: 14px;
+  }
+
+  .content__price-cashback {
+    font-size: 12px;
+  }
+
+  .content__buy-btn span {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .content__title-action-discount {
+    font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__title-action-hit {
+    font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__title-aboute {
+    font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__title-text {
+    font-size: calc(16px + 4 * ((100vw - 320px) / 1280));
+  }
+
+  .content__title-reviews-link {
+    font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__price-value {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1280));
+  }
+
+  .content__price-value::before {
+    font-size: calc(10px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__price-old {
+    font-size: calc(12px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__price-cashback {
+    font-size: calc(10px + 2 * ((100vw - 320px) / 1280));
+  }
+
+  .content__buy-btn span {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 1280));
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .contant-block {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .aside {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content__img {
+    min-height: 200px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .contant-block {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content__title-action-discount {
+    font-size: 12px;
+  }
+
+  .content__title-action-hit {
+    font-size: 12px;
+  }
+
+  .content__title-aboute {
+    font-size: 12px;
+  }
+
+  .content__title-text {
+    font-size: 16px;
+  }
+
+  .content__title-reviews-link {
+    font-size: 12px;
+  }
+
+  .content__price-value {
+    font-size: 18px;
+  }
+
+  .content__price-value::before {
+    font-size: 10px;
+  }
+
+  .content__price-old {
+    font-size: 12px;
+  }
+
+  .content__price-cashback {
+    font-size: 10px;
+  }
+
+  .content__buy-btn span {
+    font-size: 14px;
+  }
+}

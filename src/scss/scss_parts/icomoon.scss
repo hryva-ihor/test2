@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot');
+  src:  url('../fonts/icomoon.eot') format('embedded-opentype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  // speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clipboard:before {
+  content: "\e9b8";
+  font-size: 20px;
+  color: gray;
+}
+.icon-star-empty:before {
+  content: "\e9d7";
+  font-size: 20px;
+  color: gold;
+}
+.icon-heart:before {
+  content: "\e9da";
+  font-size: 20px;
+  color: rgba(128, 128, 128, 0.556);
+}
+.icon-heart
+.icon-mail2:before {
+  content: "\ea84";
+  font-size: 20px;
+  color: rebeccapurple;
+
+}
